@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <PackageId>Clerk.Framework.LogHandler</PackageId>
+    <Company>Clerk.Framework.LogHandler</Company>
+    <Description>It contains the Logger related Packages</Description>
+    <Authors>Clerk.Framework.LogHandler</Authors>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Product>Clerk.Framework.LogHandler</Product>
+    <Version>1.1.7</Version>
+    <PackageReleaseNotes>Version Change</PackageReleaseNotes>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Logger.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Options" Version="3.0.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="NLog.Web.AspNetCore" Version="4.9.0" />
+    <PackageReference Include="NuGet.CommandLine" Version="4.9.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,13 @@
+﻿
+Scaffold-DbContext "Server=DESK;initial catalog=ClerkData;user id=sa;password=password#123;MultipleActiveResultSets=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Force
+
+
+
+protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+{
+    if (!optionsBuilder.IsConfigured)
+    {
+        string connString = Clerk.Common.Helper.Configuration.ConnectionString;
+        optionsBuilder.UseSqlServer(connString);
+    }
+}

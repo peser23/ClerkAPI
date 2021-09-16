@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
+    <PackageReference Include="NetCore.AutoRegisterDi" Version="1.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Clerk.Business.Entity\Clerk.Business.Entity.csproj" />
+    <ProjectReference Include="..\Clerk.Common\Clerk.Common.csproj" />
+    <ProjectReference Include="..\Clerk.Data.Model\Clerk.Data.Model.csproj" />
+    <ProjectReference Include="..\Clerk.Data.Repository\Clerk.Data.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

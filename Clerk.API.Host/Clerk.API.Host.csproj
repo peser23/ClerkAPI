@@ -18,8 +18,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Clerk.Business.Entity\Clerk.Business.Entity.csproj" />
     <ProjectReference Include="..\Clerk.Business.Service\Clerk.Business.Service.csproj" />
-    <ProjectReference Include="..\Clerk.Common.Helper\Clerk.Common.Helper.csproj" />
-    <ProjectReference Include="..\Clerk.Common\Clerk.Common.csproj" />
   </ItemGroup>
 
 

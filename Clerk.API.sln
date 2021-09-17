@@ -29,6 +29,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clerk.Framework.DataAccess"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Clerk.Data.Database", "Clerk.Data.Database\Clerk.Data.Database.sqlproj", "{00DAB443-F1BC-4C04-9392-F14BE463CF15}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Misc", "Misc", "{4649F129-16F9-4146-92D6-69AA67D24664}"
+	ProjectSection(SolutionItems) = preProject
+		Misc\ClerkData.sql = Misc\ClerkData.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

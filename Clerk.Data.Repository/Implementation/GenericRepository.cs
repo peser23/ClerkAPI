@@ -31,45 +31,18 @@ namespace Clerk.Data.Repository.Implementation
             }
         }
         public string ConnectionString { get; }       
-        public virtual IQueryable<T> FindBy(Expression<Func<T, bool>> predicate)
-        {
-            var list = Entities.AsNoTracking().Where(predicate);
-            return list;
-        }
+        //public virtual IQueryable<T> FindBy(Expression<Func<T, bool>> predicate)
+        //{
+        //    var list = Entities.AsNoTracking().Where(predicate);
+        //    return list;
+        //}
         public IQueryable<T> GetAll()
         {
             IQueryable<T> list = Entities;
             return list;
         }      
 
-        #region Private Methods
-        private Entity.ActionStatus ApplyChanges()
-        {
-            var result = new Entity.ActionStatus();
-            try
-            {
-                result = _uow.SaveAndContinue();
-                if (!result.Success) throw new Exception(result.Message);
-            }
-            catch (DbUpdateConcurrencyException ex)
-            {
-                result.Message = ex.Message;
-            }
-            catch (DbUpdateException ese)
-            {
-                result.Message = ese.Message;
-            }
-
-
-            catch (Exception ex)
-            {
-                result.Message = ex.Message;
-            }
-
-            return result;
-        }
-        #endregion
-
+        
         #region Variable Declaration
         protected IUnitOfWork _uow;
         private DbSet<T> _entities;

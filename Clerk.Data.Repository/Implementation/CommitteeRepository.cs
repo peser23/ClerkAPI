@@ -25,7 +25,7 @@ namespace Clerk.Data.Repository.Implementation
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
             return result;
         }
@@ -53,7 +53,7 @@ namespace Clerk.Data.Repository.Implementation
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
             return result;
         }

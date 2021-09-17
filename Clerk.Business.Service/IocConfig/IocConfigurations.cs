@@ -10,17 +10,10 @@ namespace Clerk.Business.Service
     {
         public static void Initialize(IServiceCollection services, string connectionString)
         {
-            //services.AddScoped<IUserRepository, UserRepository>();
-            //services.AddScoped<IRoleRepository, RoleRepository>();
-            //services.AddScoped<IUserService, UserService>();
-            //services.AddScoped<IRoleService, RoleService>();
-
             
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             services.AddScoped<DbContext, Data.Model.Models.ClerkDataContext>();
             
-            //services.AddSingleton<IIotConnectProvider>(provider => new IotConnectProvider("","",""));
-
             //resolve dependency of processing & object services
             services.RegisterAssemblyPublicNonGenericClasses().Where(c => c.Name.EndsWith("Service")).AsPublicImplementedInterfaces();
 

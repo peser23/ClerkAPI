@@ -58,45 +58,45 @@ namespace Clerk.Data.Repository
             }
             return status;
         }
-        public virtual void RollBack()
-        {
-            try
-            {
-                _transaction.Rollback();
-                _transaction.Dispose();
-                InTransaction = false;
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }
-        }
-        public virtual Entity.ActionStatus SaveAndContinue()
-        {
-            var status = new Entity.ActionStatus();
-            try
-            {
-                DbContext.SaveChanges();
-                status.Success = true;                
-            }
-            //catch (DbEntityValidationException dbEx)
-            //{
-            //    _logger.Error(Constants.ACTION_EXCEPTION + ":UnitofWork.SaveAndContinue", dbEx);
-            //    var errorMessages = dbEx.EntityValidationErrors
-            //        .SelectMany(x => x.ValidationErrors)
-            //        .Select(x => x.ErrorMessage);
+        //public virtual void RollBack()
+        //{
+        //    try
+        //    {
+        //        _transaction.Rollback();
+        //        _transaction.Dispose();
+        //        InTransaction = false;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw;
+        //    }
+        //}
+        //public virtual Entity.ActionStatus SaveAndContinue()
+        //{
+        //    var status = new Entity.ActionStatus();
+        //    try
+        //    {
+        //        DbContext.SaveChanges();
+        //        status.Success = true;                
+        //    }
+        //    //catch (DbEntityValidationException dbEx)
+        //    //{
+        //    //    _logger.Error(Constants.ACTION_EXCEPTION + ":UnitofWork.SaveAndContinue", dbEx);
+        //    //    var errorMessages = dbEx.EntityValidationErrors
+        //    //        .SelectMany(x => x.ValidationErrors)
+        //    //        .Select(x => x.ErrorMessage);
 
-            //    status.Message = string.Join("; ", errorMessages);
-            //    status.Success = false;
-            //}
-            catch (Exception ex)
-            {
-                status.Message = ex.Message;
-                status.Success = false;
-            }
+        //    //    status.Message = string.Join("; ", errorMessages);
+        //    //    status.Success = false;
+        //    //}
+        //    catch (Exception ex)
+        //    {
+        //        status.Message = ex.Message;
+        //        status.Success = false;
+        //    }
 
-            return status;
-        }
+        //    return status;
+        //}
         protected virtual void Dispose(bool disposing)
         {
             if (_disposed) return;

@@ -1,5 +1,4 @@
 ﻿using System;
-using Clerk.Common;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -29,22 +28,22 @@ namespace Clerk.API.Controllers
             throw (ex);
         }
 
-        private string ErrorCode(Exception ex)
-        {
-            switch (ex)
-            {
-                case GenericCustomException genericException:
-                    return genericException.ErrorCode;
-                case NotFoundCustomException notFoundException:
-                    return notFoundException.ErrorCode;
-                case UnauthorizedCustomException unauthorizedCustomException:
-                    return unauthorizedCustomException.ErrorCode;
-                case Exception systemException:
-                    return "B0x005";
-                default:
-                    break;
-            }
-            return "";
-        }
+        //private string ErrorCode(Exception ex)
+        //{
+        //    switch (ex)
+        //    {
+        //        case GenericCustomException genericException:
+        //            return genericException.ErrorCode;
+        //        case NotFoundCustomException notFoundException:
+        //            return notFoundException.ErrorCode;
+        //        case UnauthorizedCustomException unauthorizedCustomException:
+        //            return unauthorizedCustomException.ErrorCode;
+        //        case Exception systemException:
+        //            return "B0x005";
+        //        default:
+        //            break;
+        //    }
+        //    return "";
+        //}
     }
 }

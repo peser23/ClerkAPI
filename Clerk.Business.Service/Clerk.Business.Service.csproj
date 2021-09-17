@@ -11,7 +11,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Clerk.Business.Entity\Clerk.Business.Entity.csproj" />
-    <ProjectReference Include="..\Clerk.Common\Clerk.Common.csproj" />
     <ProjectReference Include="..\Clerk.Data.Model\Clerk.Data.Model.csproj" />
     <ProjectReference Include="..\Clerk.Data.Repository\Clerk.Data.Repository.csproj" />
   </ItemGroup>

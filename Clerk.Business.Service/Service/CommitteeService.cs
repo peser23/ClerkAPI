@@ -1,8 +1,6 @@
 ﻿using Clerk.Business.Service.Interface;
-using Clerk.Common.Helper;
 using Clerk.Data.Repository.Implementation;
 using Clerk.Data.Repository.Interface;
-using Clerk.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -772,37 +772,7 @@ namespace Clerk.Framework.DataAccess
 
             return dataSet;
         }
-        public virtual DataSet ExecuteDataSet(DataSet dataSet, string tablename, string sql, params object[] parameters)
-        {
-            DbCommand Command = CreateCommand(sql, parameters);
-            if (Command == null)
-                return null;
-
-            return ExecuteDataSet(dataSet, tablename, Command);
-        }
-        public virtual DbCommand CreatePagingCommand(string sql, int pageSize, int page, string sortOrderFields, params object[] Parameters)
-        {
-            int pos = sql.IndexOf("select ", 0, StringComparison.OrdinalIgnoreCase);
-            if (pos == -1)
-            {
-                SetError("Invalid Command for paging. Must start with select and followed by field list");
-                return null;
-            }
-            sql = StringUtils.ReplaceStringInstance(sql, "select", string.Empty, 1, true);
-
-            string NewSql = string.Format(
-            @"
-select * FROM 
-   (SELECT ROW_NUMBER() OVER (ORDER BY @OrderByFields) as __No,{0}) __TQuery
-where __No > (@Page-1) * @PageSize and __No < (@Page * @PageSize + 1)
-", sql);
-
-            return CreateCommand(NewSql,
-                            CreateParameter("@PageSize", pageSize),
-                            CreateParameter("@Page", page),
-                            CreateParameter("@OrderByFields", sortOrderFields));
-
-        }
+       
         #endregion
 
         #region Generic Entity features

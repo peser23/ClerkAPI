@@ -23,6 +23,11 @@ namespace Clerk.API.Controllers
             _logger = logger;
         }
 
+        /// <summary>
+        /// Get Members by State
+        /// </summary>
+        /// <param name="state">Example: VA, MD, AK</param>
+        /// <returns>returns Member details and committee assignments</returns>
         [HttpGet]
         [Route("GetByState")]
         public Entity.BaseResponse<List<Entity.MemberByResponse>> GetRepresentativesByState(string state)
@@ -42,6 +47,11 @@ namespace Clerk.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Get Members by Party
+        /// </summary>
+        /// <param name="party">Example: D or R</param>
+        /// <returns></returns>
         [HttpGet]
         [Route("GetByParty")]
         public Entity.BaseResponse<List<Entity.MemberByResponse>> GetRepresentativesByParty(string party)
@@ -61,6 +71,14 @@ namespace Clerk.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Get All Members
+        /// </summary>
+        /// <param name="searchText">filter by Member Name</param>
+        /// <param name="pageNo">Number gt 0</param>
+        /// <param name="pageSize">Number gt 0</param>
+        /// <param name="orderBy"></param>
+        /// <returns></returns>
         [HttpGet]
         [Route("GetAll")]
         public Entity.BaseResponse<Entity.SearchResult<List<Entity.MemberResponse>>> GetAllMembers(string searchText = "", int? pageNo = -1, int? pageSize = -1, string orderBy = "")

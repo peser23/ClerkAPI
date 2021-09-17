@@ -10,8 +10,8 @@ namespace Clerk.Data.Repository
         EF.ClerkDataContext DbContext { get; }
         bool InTransaction { get; }
         void BeginTransaction();
-        Entity.ActionStatus SaveAndContinue();
+        //Entity.ActionStatus SaveAndContinue();
         Entity.ActionStatus EndTransaction();
-        void RollBack();
+        //void RollBack();
     }
 }

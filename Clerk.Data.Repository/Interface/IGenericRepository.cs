@@ -9,6 +9,6 @@ namespace Clerk.Data.Repository.Interface
     public interface IGenericRepository<T> where T : class
     {
         IQueryable<T> GetAll();
-        IQueryable<T> FindBy(Expression<Func<T, bool>> predicate);
+        //IQueryable<T> FindBy(Expression<Func<T, bool>> predicate);
     }
 }

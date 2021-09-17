@@ -23,6 +23,14 @@ namespace Clerk.API.Controllers
             _logger = logger;
         }
 
+        /// <summary>
+        /// Get Data on all Committees
+        /// </summary>
+        /// <param name="searchText">filter by committee name</param>
+        /// <param name="pageNo">Number gt 0</param>
+        /// <param name="pageSize">Number gt 0</param>
+        /// <param name="orderBy"></param>
+        /// <returns></returns>
         [HttpGet]
         [Route("GetAll")]
         public Entity.BaseResponse<Entity.SearchResult<List<Entity.CommitteeResponse>>> GetAllCommittees(string searchText = "", int? pageNo = -1, int? pageSize = -1, string orderBy = "")

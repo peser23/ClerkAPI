@@ -47,6 +47,8 @@ namespace Clerk.API
                     Version = "v1",
                     Description = "API for Clerk Data",
                 });
+                options.IncludeXmlComments(string.Format(@"{0}\bin\ClerkAPIHost.xml",
+                                       System.AppDomain.CurrentDomain.BaseDirectory));
             });
 
             services.AddControllers();

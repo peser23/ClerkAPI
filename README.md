@@ -24,13 +24,15 @@ An api to query member data of One Hundred Seventeenth Congress
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-  The ClerkAPI helps you query member data of the One Hundred Seventeenth Congress. Data is accurate as of 09/16/2021.
+  The ClerkAPI helps you query member data of the One Hundred Seventeenth Congress. Data is accurate as of 09/16/2021. 
+  
+  Note: Data from the XML file - https://clerk.house.gov/xml/lists/MemberData.xml was loaded to SQL Server database for this exercise
   
 ![image](https://user-images.githubusercontent.com/16979841/133715060-91b8324c-68d7-4708-87af-163c86379238.png)
 
 ### Built With
 
-* []()ASP.NET Core Web API
+* []().NET Core 3.1 Web API
 * []()SQL Server 2019
 * []()Swagger
 * []()Entity Framework Core
@@ -54,6 +56,6 @@ To get a local copy up and running follow these simple steps.
 
  ### Running the application
  1. Open the solution file - Clerk.API.sln using Visual Studio 
- 2. Modify the database connection string in the appsettings.json file.
+ 2. Modify the database connection string in the appsettings.json file to point to the database created in the "Database Setup" step.
  3. Press F5
 
